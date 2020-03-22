@@ -1,0 +1,15 @@
+{
+    "git.autofetch": false,
+    "workbench.activityBar.visible": true,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Dark Purple - Webstorm",
+    "window.zoomLevel": 0,
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.eol": "\n"
+}
