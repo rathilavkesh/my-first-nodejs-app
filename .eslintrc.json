@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb", "prettier", "plugin:node/recommended"],
   "plugins": ["prettier"],
+  "parser": "babel-eslint",
   "parserOptions": {
     // Only ESLint 6.2.0 and later support ES2020.
     "ecmaVersion": 2020
@@ -23,7 +24,9 @@
     "node/prefer-global/url-search-params": ["error", "always"],
     "node/prefer-global/url": ["error", "always"],
     "node/prefer-promises/dns": "error",
-    "node/prefer-promises/fs": "error"
+    "node/prefer-promises/fs": "error",
+    "strict": ["error", "global"],
+    "lines-between-class-members": "off"
   },
   "env": {
     "mocha": true

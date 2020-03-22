@@ -1,23 +1,35 @@
+'use strict';
+
 const config = require('config');
 const Cryptr = require('cryptr');
 
-function Utility() {
-  const secretKey = process.env.SECRET_KEY || config.get('app.secretKey');
-  const cryptr = new Cryptr(secretKey);
+class Utility {
+  #secretKey = process.env.SECRET_KEY || config.get('app.secretKey');
+  #cryptr = new Cryptr(this.#secretKey);
 
-  this.decrypt = (value) => {
+  constructor() {
+    if (!Utility.instance) {
+      Utility.instance = this;
+    }
+    return Utility.instance;
+  }
+
+  decrypt(value) {
     if (value !== null) {
-      return cryptr.decrypt(value);
+      return this.#cryptr.decrypt(value);
     }
     return null;
-  };
+  }
 
-  this.encrypt = (value) => {
+  encrypt(value) {
     if (value !== null) {
-      return cryptr.encrypt(value);
+      return this.#cryptr.encrypt(value);
     }
     return null;
-  };
+  }
 }
 
-module.exports = new Utility();
+const instance = new Utility();
+Object.freeze(instance);
+
+module.exports = instance;
